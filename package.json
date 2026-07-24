@@ -1,0 +1,34 @@
+{
+  "name": "portfolio.bingman.xyz",
+  "version": "1.0.0",
+  "description": "portfolio for Dan Bingman: user experience designer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass app/css/scss/main.scss dist/styles.css --no-source-map",
+    "watch:css": "sass app/css/scss/main.scss dist/styles.css --watch",
+    "build:html": "node scripts/build-html.js",
+    "watch:html": "chokidar \"app/html/**/*.html\" -c \"npm run build:html\"",
+    "build": "npm run build:css && npm run build:html",
+    "watch": "concurrently \"npm run watch:css\" \"npm run watch:html\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbingtech/portfolio.bingman.xyz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dbingtech/portfolio.bingman.xyz/issues"
+  },
+  "homepage": "https://github.com/dbingtech/portfolio.bingman.xyz#readme",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^10.0.3",
+    "posthtml": "^0.16.7",
+    "posthtml-include": "^2.0.1",
+    "sass": "^1.101.7"
+  }
+}
