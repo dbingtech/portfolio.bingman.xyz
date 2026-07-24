@@ -4,72 +4,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&family=Work+Sans:wght@400;700&display=swap">
     <link rel="stylesheet" type="text/css" href="dist/styles.css">
     <script src="app/js/script.js" async=""></script>
     <title>Dan Bingman</title>
 </head>
 <body>
-    <header>
-<div id="post-header">
-  <div id="post_header_container"> <!--container to post-header. Post-header is for blue-background-->
-    <a href="index.html"><img src="images/logos/Size=84.png" alt="BDI,INC Logo"></a>
-<!--SearchBar-->
-    <div id="search_bar_wrapper">
-            <input type="text" id="search_bar" placeholder="What can we help you find?">
-            <button id="search_icon" type="button" aria-label="Search" onclick="document.getElementById('search_bar').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}))">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="#20485c" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"></path></svg>
-            </button>
+    <header class="site-header">
+    <div class="site-header__inner">
+        <h1 class="site-header__title">Dan Bingman</h1>
+        <button type="button" class="site-header__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-header-menu">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+        </button>
+        <nav class="site-header__nav" aria-label="Menu">
+            <ul class="site-header__menu" id="site-header-menu">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#webdev">Web Developer</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
     </div>
-<!--Hover icons-->
-    <div class="header_icons">
-    <!-- SM-only icons from pre-header -->
-      <a href="storelocator.html" class="sm-only-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20"><path fill="#fff" d="M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13m0-11a2 2 0 1 0 0-4a2 2 0 0 0 0 4"></path></svg>
-      </a>
-    <a href="tel:833-505-2801" class="sm-only-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="#fff" fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.88 1.88 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.29 11.29 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.88 1.88 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75z" clip-rule="evenodd"></path></svg>
-    </a>
-            
-            <a id="sign_in" href="register.html">
-              <img src="images/icons/user/Size=28, Color=White.svg" alt="Sign In" width="28" height="28">
-              Sign In
-            </a>
-            <div id="cart">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 576 512"><path fill="#fff" d="m528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681"></path></svg>
-              <span class="cart-label">Cart</span>
-            </div>
-          </div>
-        </div>
-        <!-- SM two-row search row -->
-        <div id="sm-search-row">
-          <button id="sm-hamburger" type="button" aria-label="Open menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#fff" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
-          </button>
-          <input type="text" id="sm-search-bar" placeholder="Search Products">
-          <button type="button" id="sm-search-btn" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#20485c" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"></path></svg>
-          </button>
-        </div>
-</div>
-    </header>
+</header>
 
-    <!-- Mini Cart Modal -->
-    <div id="cart_modal_overlay">
-      <div class="cart-modal">
-        <div class="cart-modal-header">
-          <h2>Cart</h2>
-          <button type="button" id="cart_modal_close" class="cart-modal-close" aria-label="Close">&times;</button>
-        </div>
-        <div class="cart-modal-body">
-          <p class="cart-modal-empty">Your cart is empty</p>
-        </div>
-        <div class="cart-modal-footer">
-          <a href="#" class="cart-modal-view-link">View Cart</a>
-          <button type="button" class="btn btn--primary btn--small">Check Out</button>
-        </div>
-      </div>
+    <main>
+        <section id="hero" class="hero">
+    <h2 class="hero__title">User Experience Designer</h2>
+    <img class="hero__image" src="app/images/hero-wireframe-sketch.jpg" alt="Wireframe sketch of a web design layout">
+</section>
+
+        <section id="projects" class="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects__intro">
+        <p>These are some of the personal/professional projects that I have worked on in my spare time.</p>
+        <p>My full-time job is user experience designer for BDI, a world-wide distribution company. I am a member of the E-Commerce team which develops B2B, B2C, and customized views for specific companies. I would be happy to share and discuss these designs with you, but I don't want them on public display.</p>
+        <p>I have permission from the following companies and organizations to share these designs.</p>
     </div>
-    <main></main>
+
+    <div class="projects__grid">
+        <article class="project-card">
+            <h3 class="project-card__title">House of Mews Rescue</h3>
+            <iframe class="project-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/fOuVNjuq23NPfkxm8m5vsr/HOM-Wireframes?node-id=0-1&embed-host=share" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="project-card">
+            <h3 class="project-card__title">R&amp;E Tours</h3>
+            <iframe class="project-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/9g6RgZVHl0worxMN84WMAJ/R%26E-Wireframe?embed-host=share" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="project-card">
+            <h3 class="project-card__title">Maple Bay Get-A-Way</h3>
+            <iframe class="project-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/xzz1q4Mnqb9zywdXLPQmpS/Maple-Bay-Wireframe?node-id=66-27&embed-host=share" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="project-card">
+            <h3 class="project-card__title">RCK Property Rentals</h3>
+            <iframe class="project-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/VF4TDNSnrH7FcdqbcFC7AR/RCK-Wireframe?node-id=2017-2&embed-host=share" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="project-card">
+            <h3 class="project-card__title">Serenity in Lakewood</h3>
+            <iframe class="project-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/TlTo3YBSbOAIx4IawGcAoN/Serenity---Wireframes?node-id=394-2&embed-host=share" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="project-card">
+            <h3 class="project-card__title">Cleveland Rendezvous</h3>
+            <iframe class="project-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/jtgRDflLmMrT3RMiEy3HV7/CR-Design-System?node-id=2002-9&embed-host=share" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="project-card">
+            <h3 class="project-card__title">BDIExpress</h3>
+            <p class="project-card__status">Coming Soon</p>
+        </article>
+    </div>
+</section>
+
+        <section id="webdev" class="webdev">
+    <h2 class="section-title">Web &amp; WordPress Developer</h2>
+
+    <div class="webdev__intro">
+        <p>After teaching music, I pursued a development path. I continue to assist organizations and local businesses by building and maintaining their websites. These are some of my ongoing projects. Some websites do coincide with a design project.</p>
+    </div>
+
+    <div class="webdev__grid">
+        <article class="webdev-card">
+            <h3 class="webdev-card__title"><a href="http://www.maplebaygetaway.com">Maple Bay Get-A-Way</a></h3>
+            <iframe class="webdev-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="400" src="https://maplebaygetaway.com" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="webdev-card">
+            <h3 class="webdev-card__title"><a href="http://www.r-etours.com">R&amp;E Tours</a></h3>
+            <iframe class="webdev-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="400" src="https://r-etours.com" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="webdev-card">
+            <h3 class="webdev-card__title"><a href="http://www.rckpropertyrentals.com">RCK Property Rentals</a></h3>
+            <iframe class="webdev-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="400" src="https://rckpropertyrentals.com" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="webdev-card">
+            <h3 class="webdev-card__title"><a href="http://serenityinlakewood.com">Serenity in Lakewood</a></h3>
+            <iframe class="webdev-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="400" src="https://serenityinlakewood.com" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="webdev-card">
+            <h3 class="webdev-card__title"><a href="http://www.clevelandrendezvous.com">Cleveland Rendezvous</a></h3>
+            <iframe class="webdev-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="400" src="https://clevelandrendezvous.com" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="webdev-card">
+            <h3 class="webdev-card__title"><a href="http://www.musicmentors.org">Music Mentors</a></h3>
+            <iframe class="webdev-card__embed" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="400" src="https://musicmentors.org" allowfullscreen=""></iframe>
+        </article>
+
+        <article class="webdev-card">
+            <h3 class="webdev-card__title">House of Mews Rescue</h3>
+            <p class="webdev-card__status">Coming Soon!</p>
+            <img class="webdev-card__image" src="app/images/house-of-mews-coming-soon.jpg" alt="">
+        </article>
+    </div>
+</section>
+
+        <section id="resume" class="resume">
+    <h2 class="section-title">Full Resume</h2>
+
+    <div class="resume__entries">
+        <article class="resume-entry">
+            <p class="resume-entry__meta">UX/UI Designer &middot; BDI &middot; Oct 2022 &ndash; Present</p>
+            <ul class="resume-entry__list">
+                <li>Lead Designer for E-Commerce website.</li>
+                <li>Implement user research interviews and create user personas</li>
+                <li>Create Design System, wireframes, and low-level prototype using Figma.</li>
+                <li>Stay up to date on industry standards with focus on mobile design.</li>
+                <li>Collaborate with multiple departments</li>
+                <li>Communicate designs and updates with stakeholders; especially CEO and President.</li>
+            </ul>
+        </article>
+
+        <article class="resume-entry">
+            <p class="resume-entry__meta">IT Support Technician &middot; BDI &middot; July 2019 &ndash; Oct 2022</p>
+            <ul class="resume-entry__list">
+                <li>Diagnose, troubleshoot, and resolve a wide range of software, hardware, and connectivity issues.</li>
+                <li>Utilize Active Directory, PowerShell, Microsoft Admin Consoles, Power Automate</li>
+                <li>Create tools for data analysis and asset management</li>
+                <li>Maintain thorough and accurate records of support.</li>
+            </ul>
+        </article>
+
+        <article class="resume-entry">
+            <p class="resume-entry__meta">Productivity Consultant, Trainer, Solutions Analyst &middot; Vitalyst &middot; August 2017 &ndash; July 2019</p>
+            <ul class="resume-entry__list">
+                <li>Analyzed company usage and reported usage and insights to improve utilization of support services.</li>
+                <li>On-Site consultation for Fortune 500 companies.</li>
+                <li>Trained new employees on proprietary software and Microsoft applications.</li>
+                <li>Improve and expand knowledge of newer technologies.</li>
+            </ul>
+        </article>
+
+        <article class="resume-entry">
+            <p class="resume-entry__meta">Installation Technician &middot; iFuse &middot; July 2017 &ndash; August 2017</p>
+            <ul class="resume-entry__list">
+                <li>Key member of a team of contractors that performed installation of computers and peripherals.</li>
+                <li>230 monitors throughout the newly upgraded Pro Football Hall of Fame Stadium.</li>
+                <li>Installation of work stations at Cleveland Clinic Hospitals and Akron Children&rsquo;s Hospital.</li>
+                <li>Installation of SMART boards and Promethean boards at East Cleveland Schools.</li>
+                <li>Responsible for equipment deployment, from unpacking to mounting to start-up.</li>
+                <li>Interfaced with multiple trades and access issues in complex construction environment.</li>
+                <li>Team consistently completed individual installations in less time than planned.</li>
+            </ul>
+        </article>
+
+        <article class="resume-entry">
+            <p class="resume-entry__meta">Band Director, Music Teacher &middot; Richmond Heights Local Schools &middot; July 2013 &ndash; July 2017</p>
+            <ul class="resume-entry__list">
+                <li>Performed teaching and planning duties.</li>
+                <li>Trained Educators on web-based and computer-based technologies.</li>
+                <li>Designed and maintained music/band webpage.</li>
+                <li>Volunteered aiding IT director with maintenance and troubleshooting.</li>
+                <li>Interfaced with multiple trades and access issues in complex construction environment.</li>
+            </ul>
+        </article>
+
+        <article class="resume-entry">
+            <p class="resume-entry__meta">Band/Choir Director, Website Manager &middot; Ledgemont Local Schools &middot; August 2007 &ndash; July 2013</p>
+            <ul class="resume-entry__list">
+                <li>Direct bands, choir, general music grades 7-12</li>
+                <li>Assist 5th and 6th grade band director</li>
+                <li>Work with athletic director to schedule, organize, and implement yearly concerts</li>
+                <li>Responsible for recruitment and retention</li>
+                <li>Increase community awareness of music program through media coverage and community events</li>
+                <li>Collaborate with booster organization to plan yearly budget for the program and students</li>
+                <li>Work in conjunction with teachers for students with special needs</li>
+            </ul>
+            <ul class="resume-entry__list">
+                <li>Marching Band Director</li>
+                <li>Design and implement marching band drill designs</li>
+                <li>Organize marching band volunteers for fall season and summer parades</li>
+                <li>Prepare individuals for solos and auditions</li>
+                <li>Research fundraising opportunities and organize through booster club.</li>
+                <li>Website manager for school district</li>
+                <li>Implement online forms for school functions</li>
+            </ul>
+        </article>
+    </div>
+
+    <p class="resume__pdf-link"><a href="app/images/Full_Resume_Bingman.pdf">Download full resume (PDF)</a></p>
+</section>
+
+    </main>
 
 </body>
 </html>

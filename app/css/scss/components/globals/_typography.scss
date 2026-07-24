@@ -1,0 +1,15 @@
+@use "variables" as v;
+
+body {
+  font-family: v.$font-body;
+  color: v.$color-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: v.$font-heading;
+}

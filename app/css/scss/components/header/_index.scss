@@ -1,20 +1,8 @@
-body {
-  font-family: "Work Sans", sans-serif;
-  color: #282b28;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Crimson Text", serif;
-}
+@use "../globals/variables" as v;
 
 .site-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid rgba(40, 43, 40, 0.08);
+  background-color: v.$color-surface;
+  border-bottom: 1px solid rgba(v.$color-text, 0.08);
 }
 
 .site-header__inner {
@@ -33,7 +21,7 @@ h6 {
   font-weight: 600;
   text-transform: capitalize;
   line-height: 1.5;
-  color: #282b28;
+  color: v.$color-text;
 }
 
 .site-header__toggle {
@@ -43,7 +31,7 @@ h6 {
   padding: 0.5rem;
   background: none;
   border: none;
-  color: #282b28;
+  color: v.$color-text;
   cursor: pointer;
 }
 
@@ -54,20 +42,24 @@ h6 {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-.site-header__menu a {
-  font-weight: 400;
-  color: #6a3937;
-  text-decoration: none;
-}
-.site-header__menu a:hover, .site-header__menu a:focus-visible {
-  text-decoration: underline;
+
+  a {
+    font-weight: 400;
+    color: v.$color-primary;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: v.$breakpoint-nav-collapse) {
   .site-header__toggle {
     display: inline-flex;
   }
+
   .site-header__menu {
     display: none;
     flex-direction: column;
@@ -75,8 +67,9 @@ h6 {
     width: 100%;
     gap: 0.75rem;
     padding-block: 1rem;
-  }
-  .site-header__menu.is-open {
-    display: flex;
+
+    &.is-open {
+      display: flex;
+    }
   }
 }
